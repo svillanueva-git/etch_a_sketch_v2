@@ -1,6 +1,4 @@
-
 const container = document.querySelector('#container');
-
 
 function gridSize(num) {
   num = num*num;
@@ -11,19 +9,23 @@ function gridSize(num) {
   }
 }
 
-
 function removeAllChildNodes() {
   while (container.firstChild) {
       container.removeChild(container.firstChild);
   }
 }
 
+function evenSides(num) {
+  let root = document.documentElement;
+  root.style.setProperty('--sides', num);
+}
 
 const button = document.querySelector('#refresh');
 button.addEventListener('click', () => {
   newNum = prompt("How many squares on each side?");
   removeAllChildNodes();
   gridSize(newNum);
+  evenSides(newNum);
 })
 
 
