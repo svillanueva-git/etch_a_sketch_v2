@@ -7,6 +7,12 @@ function gridSize(num) {
     gridSquares.classList.add('gridSquares');
     container.appendChild(gridSquares);
   }
+  const squares = container.querySelectorAll('div');
+  squares.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+      div.classList.add('hovering');
+    })
+  })
 }
 
 function removeAllChildNodes() {
@@ -30,3 +36,5 @@ button.addEventListener('click', () => {
 
 
 gridSize(16);
+
+
